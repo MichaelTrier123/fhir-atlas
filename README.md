@@ -1,6 +1,6 @@
-# FHIR Atlas — Codex handoff (complete design/planning source)
+# FHIR Atlas
 
-This package consolidates decisions and the currently agreed product direction. **It is a product handoff, not a working application or completed course.**
+A static FHIR R4 learning and reference prototype. [Open FHIR Atlas](https://michaeltrier123.github.io/fhir-atlas/). The planning documents below describe the product scope; the current application uses clearly labeled fixtures and is not a complete reference dataset or course.
 
 ## Confirmed
 - FHIR R4 4.0.1, starting with DK Core (exact compatible package version to verify and pin).
@@ -22,7 +22,7 @@ This package consolidates decisions and the currently agreed product direction. 
 - Exact DK Core NPM package version and dependencies (must be validated against R4).
 - Final brand design tokens, typography/fonts, colors and route names; decide in WP01.
 - Actual full course scripts and all question/answer banks; to be authored and reviewed incrementally.
-- Final public repository name and GitHub Pages URL.
+- Repository and hosting are configured: [MichaelTrier123/fhir-atlas](https://github.com/MichaelTrier123/fhir-atlas), [public application](https://michaeltrier123.github.io/fhir-atlas/).
 - Whether graph exploration initially models only resource references or also the conceptual profile/IG graph; both belong in roadmap, first slice can be focused.
 
 ## Initial Codex task
@@ -30,11 +30,11 @@ Read the files above and inspect all mockups. **Do WP01 planning only**: a detai
 
 ## WP02 interactive prototype
 
-The first UX prototype is available locally. Run `npm ci` followed by `npm run dev` and open the printed URL. See [WP02 review guide](docs/WP02_PROTOTYPE_REVIEW.md) for the two review journeys, implementation boundaries, screenshots, and check commands. The prototype uses labeled fixtures; official-package ingestion and public deployment are later work packages.
+The first UX prototype is available locally. Run `npm ci` followed by `npm run dev` and open the printed URL. See [WP02 review guide](docs/WP02_PROTOTYPE_REVIEW.md) for the two review journeys, implementation boundaries, screenshots, and check commands. The prototype uses labeled fixtures; official-package ingestion remains a later work package. Public deployment is complete under WP03.
 
 ## WP03 GitHub Pages
 
-The deployment workflow and production subpath checks are implemented. Public deployment awaits selection of the target GitHub repository. See [GitHub Pages setup and verification](docs/GITHUB_PAGES.md). To preview the built application locally:
+The application is published at [michaeltrier123.github.io/fhir-atlas](https://michaeltrier123.github.io/fhir-atlas/). Checks and deployment run automatically when the default branch changes. See [GitHub Pages setup and verification](docs/GITHUB_PAGES.md). To preview the built application locally:
 
 ```sh
 PAGES_BASE_PATH=/fhir-atlas/ npm run build:pages

@@ -1,5 +1,12 @@
 # FHIR Atlas — Codex implementation plan (UX first)
 
+## Delivery status — 23 October 2026
+
+- WP01: approved.
+- WP02: interactive prototype delivered; promotional copy replaced with descriptive English.
+- WP03: complete. [Public application](https://michaeltrier123.github.io/fhir-atlas/) and [repository](https://github.com/MichaelTrier123/fhir-atlas). CI checks and the public deployment have been verified.
+- WP04–WP06: not started. The application still uses labeled prototype fixtures.
+
 ## Confirmed constraints
 
 - **FHIR baseline:** FHIR R4 / 4.0.1.

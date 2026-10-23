@@ -2,7 +2,7 @@
 
 ## Current status
 
-The Pages build, workflow, and local production checks are implemented. The project has not been published: the source folder is not yet a Git repository and no target GitHub repository has been selected. WP03's public-URL acceptance criterion remains pending until that repository is configured and its first deployment succeeds.
+WP03 is complete as of 23 October 2026. The public repository is [MichaelTrier123/fhir-atlas](https://github.com/MichaelTrier123/fhir-atlas), and the deployed application is [FHIR Atlas on GitHub Pages](https://michaeltrier123.github.io/fhir-atlas/). The first build and deployment [passed on GitHub Actions](https://github.com/MichaelTrier123/fhir-atlas/actions/runs/40015541095). Pages uses GitHub Actions with HTTPS enforced.
 
 The copy revision replaces promotional headings, taglines, navigation notes, search prompts, and feedback with descriptive English. The FHIR version, DK Core scope, fixture labels, and no-backend architecture are unchanged.
 
@@ -20,11 +20,11 @@ Node 22 is selected through `.nvmrc`. No API key or additional deployment secret
 - `owner/owner.github.io` → `/`
 - Set the repository Actions variable `PAGES_BASE_PATH` to `/` for a custom domain or to another explicit absolute path ending in `/` when needed.
 
-Local examples (the repository name is illustrative):
+Local commands for the configured repository:
 
 ```sh
 npm ci
-GITHUB_REPOSITORY=example/fhir-atlas npm run build:pages
+GITHUB_REPOSITORY=MichaelTrier123/fhir-atlas npm run build:pages
 npm run check:pages
 npm run preview:pages -- --port 4173
 ```
@@ -39,9 +39,9 @@ The preview prints its complete URL, including the project prefix. It serves the
 
 `pages-build.json` records the generated prefix for the local checker/preview. It contains no credentials or personal data. The ordinary `npm run build` still uses Vite's configurable `VITE_BASE_PATH` and does not create Pages-specific preview metadata; use `build:pages` before `check:pages` or `preview:pages`.
 
-## Configure the target repository
+## Configuration procedure
 
-Once an owner/name or repository URL is selected:
+The following steps are retained for reproducing the setup in another repository. The configured repository above already has Pages enabled:
 
 1. Initialize and connect this source folder, or integrate it into the chosen repository after inspecting any existing contents. Do not overwrite another project.
 2. Push the project, including `.github/workflows/pages.yml` and `package-lock.json`, to its default branch.
@@ -59,9 +59,9 @@ Once an owner/name or repository URL is selected:
 
 The HTTP hash-link checks confirm delivery of the same static entry document. They do not alone assert that React rendered a route; browser checks cover rendering and interaction separately.
 
-## Remaining acceptance item
+## Public deployment verification
 
-A successful deployment to the chosen GitHub repository and verification on its returned public Pages URL. Repository selection is the only missing user configuration; DK Core package ingestion belongs to WP04.
+Verified on the public Pages origin on 23 October 2026: Home rendering with the neutral copy; a direct lesson URL and refresh; Patient navigation and persistence of the Structure tab on refresh; the lazy-loaded relationship graph; and lesson completion saved across reloads. The deployment passed lint, all 12 tests, production build, static asset checks, and deployment jobs. No remaining WP03 acceptance items. DK Core package ingestion remains WP04 and has not started.
 
 References: [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [Vite GitHub Pages deployment](https://vite.dev/guide/static-deploy.html#github-pages).
 
